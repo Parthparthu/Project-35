@@ -1,13 +1,13 @@
 var dogImg, happyDogImg, dog, database, foodS, foodStock, canvas, lastFed, fedTime, foodObj, feed, addFood, food1, foodCount, input, milk, milkImg;
 
 function preload() {
-  dogImg = loadImage('images/Dog.png');
-  happyDogImg = loadImage('images/dogImg1.png');
-  milkImg = loadImage('images/Milk.png');
+  dogImg = loadImage("Dog.png");
+  happyDogImg = loadImage("dogImg1.png");
+  milkImg = loadImage("Milk.png");
 }
 
 function setup() {
-  createCanvas(600,600) ;
+  createCanvas(1000, 350);
   database = firebase.database();
 
   dog = createSprite(650, 250);
@@ -25,14 +25,11 @@ function setup() {
   food1.start();
 
   addFood = createButton("Add food");
-  addFood.position(370, 45);
+  addFood.position(width/2+250, 110);
   addFood.mousePressed(addFoods);
 
-  input = createInput("Your Dog's Name");
-  input.position(150, 70);
-
   feed = createButton("Feed your Dog");
-  feed.position(450, 45);
+  feed.position(width/2+130, 110);
   feed.mousePressed(feedDog);
 
   canvas = createCanvas(800, 400);
